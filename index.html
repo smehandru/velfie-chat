@@ -3,52 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Velfie App</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Velfie – Din digitale assistent</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="bottom-nav">
-    <button onclick="showScreen('home')">Hjem</button>
-    <button onclick="showScreen('chat')">Spør Velfie</button>
-    <button onclick="showScreen('profile')">Meg</button>
-    <button onclick="showScreen('booking')">Bestill</button>
-  </nav>
-
-  <!-- Hjem -->
-  <section id="home" class="screen active">
-    <h2>Velkommen til Velfie</h2>
-    <p>Dette er startsiden i appen din. Du kan legge til mer innhold her basert på Figma-design.</p>
-  </section>
-
-  <!-- Spør Velfie (Chatbot) -->
-  <section id="chat" class="screen">
-    <div class="chat-container">
-      <div class="chat-header">Spør Velfie</div>
-      <div id="chatBox" class="chat-box">
-        <div class="chat-message bot">Hei! Jeg heter Velfie 🤖 Hva kan jeg hjelpe deg med?</div>
-      </div>
-      <div id="typingIndicator" class="chat-message bot typing-indicator" style="display: none;">
-        <span></span><span></span><span></span>
-      </div>
-      <div class="chat-input-container">
-        <input type="text" id="userInput" placeholder="Skriv her..." onkeypress="handleKeyPress(event)" />
-        <button onclick="sendMessage()">Send</button>
+  <div class="app-container">
+    
+    <!-- 🔵 Home Screen -->
+    <div id="home" class="screen active">
+      <div class="content">
+        <h1>🏠 Hjem</h1>
+        <p>Velkommen til Velfie. Naviger med knappene nederst.</p>
       </div>
     </div>
-  </section>
 
-  <!-- Meg -->
-  <section id="profile" class="screen">
-    <h2>Min profil</h2>
-    <p>Her kan du legge inn informasjon fra Figma-designet ditt.</p>
-  </section>
+    <!-- 💬 Chat Screen -->
+    <div id="chat" class="screen">
+      <div class="chat-container">
+        <div class="chat-header">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Cartoon_Avatar.png/100px-Cartoon_Avatar.png" alt="Velfie Avatar" class="avatar" />
+          <div class="header-text">
+            <h1>Velfie</h1>
+            <p>Din digitale assistent</p>
+          </div>
+        </div>
 
-  <!-- Bestill -->
-  <section id="booking" class="screen">
-    <h2>Bestill tjenester</h2>
-    <p>Her kan brukeren velge eller bestille velferdsteknologi.</p>
-  </section>
+        <div class="chat-box" id="chatBox">
+          <div class="chat-message bot">Hei! Hva kan jeg hjelpe deg med?</div>
+        </div>
+
+        <div class="typing-indicator" id="typingIndicator" style="display: none;">
+          <span></span><span></span><span></span>
+        </div>
+
+        <div class="chat-input-container">
+          <input type="text" id="userInput" placeholder="Skriv en melding..." onkeydown="handleKeyPress(event)" />
+          <button onclick="sendMessage()">📨</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 📦 Order Screen -->
+    <div id="order" class="screen">
+      <div class="content">
+        <h1>🛒 Bestill</h1>
+        <p>Her kan du se bestillingsmuligheter.</p>
+      </div>
+    </div>
+
+    <!-- 📚 Solutions Screen -->
+    <div id="solutions" class="screen">
+      <div class="content">
+        <h1>📚 Løsninger</h1>
+        <p>Finn ut mer om løsninger for velferdsteknologi.</p>
+      </div>
+    </div>
+
+    <!-- 🔻 Footer Navigation -->
+    <footer class="footer-nav">
+      <button onclick="showScreen('home')">🏠 Hjem</button>
+      <button onclick="showScreen('chat')">💬 Spør Velfie</button>
+      <button onclick="showScreen('order')">🛒 Bestill</button>
+      <button onclick="showScreen('solutions')">📚 Løsninger</button>
+    </footer>
+
+  </div>
 
   <script src="script.js"></script>
 </body>
