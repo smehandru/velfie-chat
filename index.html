@@ -1,29 +1,55 @@
-<!-- Chatbot Section (Spør Velfie) -->
-<section id="chat" class="screen">
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velfie App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="bottom-nav">
+    <button onclick="showScreen('home')">Hjem</button>
+    <button onclick="showScreen('chat')">Spør Velfie</button>
+    <button onclick="showScreen('profile')">Meg</button>
+    <button onclick="showScreen('booking')">Bestill</button>
+  </nav>
+
+  <!-- Hjem -->
+  <section id="home" class="screen active">
+    <h2>Velkommen til Velfie</h2>
+    <p>Dette er startsiden i appen din. Du kan legge til mer innhold her basert på Figma-design.</p>
+  </section>
+
+  <!-- Spør Velfie (Chatbot) -->
+  <section id="chat" class="screen">
     <div class="chat-container">
-      <div class="chat-header">
-        <span>💬 Velfie</span>
-      </div>
-  
+      <div class="chat-header">Spør Velfie</div>
       <div id="chatBox" class="chat-box">
-        <!-- Messages appear here -->
-        <div class="chat-message bot">Hei! Hva kan jeg hjelpe deg med?</div>
+        <div class="chat-message bot">Hei! Jeg heter Velfie 🤖 Hva kan jeg hjelpe deg med?</div>
       </div>
-  
-      <!-- Typing indicator (initially hidden) -->
-      <div id="typingIndicator" class="chat-message bot typing-indicator hidden">
+      <div id="typingIndicator" class="chat-message bot typing-indicator" style="display: none;">
         <span></span><span></span><span></span>
       </div>
-  
       <div class="chat-input-container">
-        <input
-          type="text"
-          id="userInput"
-          placeholder="Skriv en melding..."
-          onkeypress="handleKeyPress(event)"
-        />
-        <button onclick="sendMessage()">📤</button>
+        <input type="text" id="userInput" placeholder="Skriv her..." onkeypress="handleKeyPress(event)" />
+        <button onclick="sendMessage()">Send</button>
       </div>
     </div>
   </section>
-  
+
+  <!-- Meg -->
+  <section id="profile" class="screen">
+    <h2>Min profil</h2>
+    <p>Her kan du legge inn informasjon fra Figma-designet ditt.</p>
+  </section>
+
+  <!-- Bestill -->
+  <section id="booking" class="screen">
+    <h2>Bestill tjenester</h2>
+    <p>Her kan brukeren velge eller bestille velferdsteknologi.</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
