@@ -1,0 +1,29 @@
+<!-- Chatbot Section (Spør Velfie) -->
+<section id="chat" class="screen">
+    <div class="chat-container">
+      <div class="chat-header">
+        <span>💬 Velfie</span>
+      </div>
+  
+      <div id="chatBox" class="chat-box">
+        <!-- Messages appear here -->
+        <div class="chat-message bot">Hei! Hva kan jeg hjelpe deg med?</div>
+      </div>
+  
+      <!-- Typing indicator (initially hidden) -->
+      <div id="typingIndicator" class="chat-message bot typing-indicator hidden">
+        <span></span><span></span><span></span>
+      </div>
+  
+      <div class="chat-input-container">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Skriv en melding..."
+          onkeypress="handleKeyPress(event)"
+        />
+        <button onclick="sendMessage()">📤</button>
+      </div>
+    </div>
+  </section>
+  
